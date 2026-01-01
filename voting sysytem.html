@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure E-Voting System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>🗳️ Digital Election</h2>
+  <div id="status"></div>
+
+  <div id="authSection" class="auth-section">
+    <input type="text" id="cnic" placeholder="CNIC (e.g. 42101-XXXXXXX-X)">
+    <input type="number" id="age" placeholder="Age">
+    <button class="btn-primary" onclick="verifyVoter()">Verify & Continue</button>
+  </div>
+
+  <div id="votingSection" class="voting-section hidden">
+    <div class="candidate-card">
+      <span>🦁 Candidate A</span>
+      <button class="btn-vote" onclick="castVote('A')">Vote</button>
+    </div>
+    <div class="candidate-card">
+      <span>🦅 Candidate B</span>
+      <button class="btn-vote" onclick="castVote('B')">Vote</button>
+    </div>
+    <div class="candidate-card">
+      <span>🏏 Candidate C</span>
+      <button class="btn-vote" onclick="castVote('C')">Vote</button>
+    </div>
+
+    <hr style="opacity: 0.1">
+    
+    <button onclick="toggleResults()" style="background:none; color:#a5b4fc; text-decoration:underline;">View Live Results</button>
+    
+    <div id="resultBox" class="result-box hidden">
+      <p>A: <span id="resA">0</span> | B: <span id="resB">0</span> | C: <span id="resC">0</span></p>
+    </div>
+
+    <button class="btn-reset" onclick="resetSystem()">Logout & Reset</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
